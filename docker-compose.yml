@@ -1,0 +1,25 @@
+services:
+  sync:
+    build: ./sync-go
+    environment:
+      GLYPHMESH_ADDR: ":8080"
+    ports:
+      - "8080:8080"
+
+  assets:
+    build: ./assets-python
+    environment:
+      GLYPHMESH_ASSET: procedural
+    ports:
+      - "8000:8000"
+
+  canvas:
+    build: ./canvas-ts
+    environment:
+      NEXT_PUBLIC_SYNC_URL: ws://localhost:8080
+      NEXT_PUBLIC_ASSETS_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - sync
+      - assets

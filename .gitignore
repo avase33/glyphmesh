@@ -1,0 +1,32 @@
+# Rust / wasm
+target/
+**/*.rs.bk
+Cargo.lock
+engine-rust/pkg/
+
+# Go
+sync-go/sync
+*.exe
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+canvas-ts/public/engine/
+
+# Env / editors
+.env
+.DS_Store
+.idea/
+.vscode/
